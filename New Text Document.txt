@@ -1,0 +1,301 @@
+500341210220
+
+Importing and exporting data in HDFS and Hive from RDBMS using Sqoop.
+Involved in creating Hive tables, loading data as text, parquet and orc to write into hive queries.
+Worked on Hive partition and bucketing concepts and created Hive External and Internal tables with Hive partition.
+Implemented Spark using Scala and utilizing Spark Core, Spark AQL API for faster processing of data instead of Mapreduce in Java.
+Used SparkSQL for reading data from external sources and processes the the data using Scala computation framework. 
+Used Spark-SQL to Load JSON data and create Data Frames, Data Sets & RDD's and loaded it into Hive Tables and handled Structured data using Spark SQL.
+Maharashtra
+
+Hadoop Ecosystem : Sqoop, Hive, HDFS, Zookeeper, Spark Scala
+
+IDE: Eclipse, SBT
+
+Programming Languages: Scala, Python
+
+Experienced Big Data/Spark Developer has a strong backgroung with file distribution system in a big-data arena. Understands the complex processing needs of big data and has experience developing codes and modules to address those needs
+
+
+Overall 2.5 Years of experience in IT Industry as Hadoop/Spark Developer using Big data Technologies like Hadoop Ecosystem, Spark Ecosystems.
+In-depth understanding of Spark Architecture including Spark Core, Spark SQL, Data frames and Data sets.
+Experience in using Accumulator variables, Broadcast variables, RDD caching.
+Experience in using Spark-SQL with various data sources like JSON, Parquet and Hive.
+Experience in transferring data from RDBMS to HDFS and Hive table usinf Sqoop.
+Involved in Cluster Coordination services through Zookeeper
+
+•	Good communication skills with ability to work in a team as well as individually.
+
+
+
+
+
+Q1)
+sachin@ubuntu:~/demo/git$ git add f1.txt 
+sachin@ubuntu:~/demo/git$ ls
+f1.txt
+sachin@ubuntu:~/demo/git$ git ls-files
+f1.txt
+sachin@ubuntu:~/demo/git$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   f1.txt
+
+Q2)
+sachin@ubuntu:~/demo/git$ git commit -m "f1 pa kaka"
+[master (root-commit) 7366ab0] f1 pa kaka
+ 1 file changed, 1 insertion(+)
+ create mode 100644 f1.txt
+sachin@ubuntu:~/demo/git$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+sudo yum install git -y 
+mkdir -p demo/gitdemo/
+cd demo/gitdemo/
+git init
+
+
+*******************************************************************
+
+case1.
+
+[ec2-user@ip-172-31-39-145 gitdemo]$ vi f1.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ vi f2.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git add .
+[ec2-user@ip-172-31-39-145 gitdemo]$ git commit -m "first master commit f1 f2"
+[master (root-commit) 77849d5] first master commit f1 f2
+
+[ec2-user@ip-172-31-39-145 gitdemo]$ git ls-files
+f1.txt
+f2.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ ls
+f1.txt  f2.txt
+
+[ec2-user@ip-172-31-39-145 gitdemo]$ git branch
+* master
+
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ git branch b1 master
+[ec2-user@ip-172-31-39-145 gitdemo]$ git branch
+  b1
+* master
+[ec2-user@ip-172-31-39-145 gitdemo]$ git checkout b1
+Switched to branch 'b1'
+[ec2-user@ip-172-31-39-145 gitdemo]$ git branch
+* b1
+  master
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ ls
+f1.txt  f2.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git ls-fules
+git: 'ls-fules' is not a git command. See 'git --help'.
+
+The most similar command is
+        ls-files
+[ec2-user@ip-172-31-39-145 gitdemo]$ git ls-files
+f1.txt
+f2.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git branch
+* b1
+  master
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ ls
+f1.txt  f2.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ cat f2.txt
+this is f2 on master
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ vi f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git checkout master
+Switched to branch 'master'
+[ec2-user@ip-172-31-39-145 gitdemo]$ ls
+f1.txt  f2.txt  f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git ls-files
+f1.txt
+f2.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git checkout b1
+Switched to branch 'b1'
+[ec2-user@ip-172-31-39-145 gitdemo]$ git status
+On branch b1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        f3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[ec2-user@ip-172-31-39-145 gitdemo]$ git add .
+[ec2-user@ip-172-31-39-145 gitdemo]$ git commit -m "b1 f3"
+[b1 2e70ea0] b1 f3
+ Committer: Cloud User <ec2-user@ip-172-31-39-145.ap-south-1.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ ls
+f1.txt  f2.txt  f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ cat f3
+cat: f3: No such file or directory
+[ec2-user@ip-172-31-39-145 gitdemo]$ cat f3.txt
+this is on b1 f3
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ git ls-files
+f1.txt
+f2.txt
+f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git checkout master
+Switched to branch 'master'
+[ec2-user@ip-172-31-39-145 gitdemo]$ git checkout masterls
+error: pathspec 'masterls' did not match any file(s) known to git.
+[ec2-user@ip-172-31-39-145 gitdemo]$ git checkout master
+Already on 'master'
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ ls
+f1.txt  f2.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git ls-files
+f1.txt
+f2.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git f3.txt
+git: 'f3.txt' is not a git command. See 'git --help'.
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ ls
+f1.txt  f2.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ vi f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git log --oneline
+77849d5 (HEAD -> master) first master commit f1 f2
+[ec2-user@ip-172-31-39-145 gitdemo]$ git log --oneline b1
+2e70ea0 (b1) b1 f3
+77849d5 (HEAD -> master) first master commit f1 f2
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        f3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[ec2-user@ip-172-31-39-145 gitdemo]$ git add .
+[ec2-user@ip-172-31-39-145 gitdemo]$ git commit -m "2nd commit on master f3"
+[master ecee5ec] 2nd commit on master f3
+ Committer: Cloud User <ec2-user@ip-172-31-39-145.ap-south-1.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ ls
+f1.txt  f2.txt  f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git ls-files
+f1.txt
+f2.txt
+f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ git merge b1 master
+Auto-merging f3.txt
+CONFLICT (add/add): Merge conflict in f3.txt
+Automatic merge failed; fix conflicts and then commit the result.
+[ec2-user@ip-172-31-39-145 gitdemo]$ git log --oneline master
+ecee5ec (HEAD -> master) 2nd commit on master f3
+77849d5 first master commit f1 f2
+[ec2-user@ip-172-31-39-145 gitdemo]$ git log --oneline b1
+2e70ea0 (b1) b1 f3
+77849d5 first master commit f1 f2
+[ec2-user@ip-172-31-39-145 gitdemo]$ git log --oneline
+ecee5ec (HEAD -> master) 2nd commit on master f3
+77849d5 first master commit f1 f2
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ git merge b1 master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+[ec2-user@ip-172-31-39-145 gitdemo]$ vi f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git merge b1 master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ git merge b1 master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+[ec2-user@ip-172-31-39-145 gitdemo]$ vi f3.txt
+[ec2-user@ip-172-31-39-145 gitdemo]$ git merge b1 master
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+[ec2-user@ip-172-31-39-145 gitdemo]$ git add .
+[ec2-user@ip-172-31-39-145 gitdemo]$ git commit -m "resolving merge conflits"
+[master 107e117] resolving merge conflits
+ Committer: Cloud User <ec2-user@ip-172-31-39-145.ap-south-1.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+[ec2-user@ip-172-31-39-145 gitdemo]$
+[ec2-user@ip-172-31-39-145 gitdemo]$ git log --oneline
+107e117 (HEAD -> master) resolving merge conflits
+ecee5ec 2nd commit on master f3
+2e70ea0 (b1) b1 f3
+77849d5 first master commit f1 f2
+[ec2-user@ip-172-31-39-145 gitdemo]$ git log --oneline b1
+2e70ea0 (b1) b1 f3
+77849d5 first master commit f1 f2
+
+
+******************************************
+
+[ec2-user@ip-172-31-39-145 gitdemo]$ git log --oneline master
+48f2c16 (HEAD -> master, b1) b1 ss
+9b11dab stash commit
+880c372 stash commiting
+77849d5 first master commit f1 f2
+
+[ec2-user@ip-172-31-39-145 gitdemo]$ git log --oneline b1
+48f2c16 (HEAD -> master, b1) b1 ss
+9b11dab stash commit
+880c372 stash commiting
+77849d5 first master commit f1 f2
+
+
+
+
+
